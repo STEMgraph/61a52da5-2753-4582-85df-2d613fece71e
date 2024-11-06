@@ -1,0 +1,78 @@
+\begin{challenge}
+\chatitle{Using xpdf for displaying PDF files}
+\begin{chadescription}
+When the widespread use of graphical terminals became more common in the early 1990s, problems started to appear. 
+Documents that someone created on a specific computer, weren't neccessarily portable to other platforms.
+Portable in this context means, that a layout that the author intended, just wouldn't be displayed properly on somebody elses computer.
+As long as people were just using \mintinline{shell}|.txt| files on their text-based terminals, there was no problem. 
+But as the possibility to include picture into documents and display them on a graphical shell offered more customization options, customization problems also grew. 
+It was Adobe, that came up with the idea of a portable file format, that could represent written documents properly - independent of which computer was used to display it.
+Hence the name: Portable Document Format or short \textbf{.PDF}. 
+PDF offered three major improvements to genereate consistent renderings, while still keeping the file-size from exploding. 
+\begin{enumerate}
+\item including Graphics and Fonts into the file-format itself
+\item providing a reader-software for multiple platforms - Adobe Acrobat
+\item protecting documents from manipulation by a non-priviledged reader
+\end{enumerate}
+
+Adobe Acrobat was used to generate and read PDFs and was sold by Adobe for multiple platforms. 
+One of the reasons by the way why they used C++ to write it.
+When Adobe realized, that it would help their market penetration to have everybody being able to read they released a cost-free spin-off called \textit{Adobe Acrobat Reader}.
+In this challenge you shall find out, how to use a free PDF reader to display documents like these. 
+\end{chadescription}
+
+\begin{task}
+Open your terminal and check whether your \mintinline{shell}|DISPLAY| Variable is set correctly.
+\begin{questions}
+\item Which command can you use on your system to display all environment-variables?
+\item Which command can you use to read all env-variables, redirect the result into a filtering-tool and only display the wanted variables?
+\item Which command can you use to only display the wanted environment-variable?
+\item What is the content of your \mintinline{shell}|DISPLAY| variable?
+\end{questions}
+If your display-variable is not set correctly, go back to the \href{https://www.github.com/STEMgraph/<uuid>}{first X-Server Challenge}.
+\end{task}
+
+\begin{task}
+At this point, you should already have installed the x11-apps toolkit to test your connection. 
+Use \mintinline{shell}|xeyes| to test the connection to your x11-Server.
+\begin{questions}
+\item Which command can you use to start \mintinline{shell}|xeyes|?
+\item Explain in your own words, what happens when a user-program wants to display something using the X11 protocol!
+\end{questions}
+If this didn't work as expected for you, go back to the \href{https://www.github.com/STEMgraph/<uuid>}{first X-Server Challenge}.
+\end{task}
+
+\begin{task}
+    Use your preferred package manager to install the \mintinline{shell}|xpdf| package.
+    If you want to build xpdf from source, follow the Link to the \href{https://gitlab.com/xpdf-mirror/xpdf}{xpdf} repository.
+
+\begin{questions}
+    \item Which command can you use to install the \mintinline{shell}|xpdf| package?
+    \item In which programming language was xpdf written?
+    \item Can you figure out, which GUI Library xpdf uses?
+    \item Run \mintinline{shell}|xpdf --version|, what is the output?
+\end{questions}
+\end{task}
+
+\begin{task}
+    \mintinline{shell}|xpdf| can display PDF files.
+    Run \mintinline{shell}|xpdf <filename>| to display the PDF file \textit{<filename>}.
+    If you don't have a PDF file, you can download a simple one from \href{https://constitutioncenter.org/media/files/constitution.pdf}{https://constitutioncenter.org/media/files/constitution.pdf}.
+    To download a file into your \mintinline{shell}|~| directory, use \mintinline{shell}|wget <url>|.
+
+\begin{questions}
+    \item Run the command xpdf -z <filename.pdf> 8, what is the output?
+    \item Run the command xpdf -z 50 <filename.pdf>; Run the command xpdf -z 150 <filename.pdf>, what is the output?
+    \item Run the command xpdf -rv <filename.pdf>, what is the output?
+\end{questions}
+\end{task}
+\begin{task}
+    While installing xpdf, you also installed the \mintinline{shell}|poppler-utils| package.
+    Part of this package is the \mintinline{shell}|pdftotext| command.
+
+\begin{questions}
+    \item What does the command \mintinline{shell}|pdftotext <filename.pdf> <filename.txt>| do?
+\end{questions}    
+\end{task}
+
+\end{challenge}
