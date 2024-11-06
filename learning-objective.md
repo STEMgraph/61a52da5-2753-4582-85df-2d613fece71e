@@ -1,0 +1,1 @@
+At the end of this challenge, the scholar will be able to use and understand basic operations on PDF files. 
